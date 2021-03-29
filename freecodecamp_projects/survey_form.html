@@ -3,6 +3,33 @@
         background-color: darkolivegreen;
         color: chocolate;
     }
+
+    body {
+        background-color: #6f4e37;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    #prompt-7 {
+        margin-top: 20px;
+    }
+
+    #prompt-8 {
+        margin-top: 20px;
+    }
+
+    div {
+        margin: 10px 0px 10px 0px;
+    }
+
+    main {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
 </style>
 <html lang="en">
 
@@ -14,76 +41,93 @@
 </head>
 <main>
     <h1 id="title">Mitchell Mudd's Rock Climbing Survey</h1>
-    <p id="descrption">This survey was created to gauge how the rock climbing community feels about different types and
+    <p id="description">This survey was created to gauge how the rock climbing community feels about different types and
         styles of climbing.</p>
 
     <body>
         <form id="survey-form">
-            <label id=name-label for="name">Name:</label>
-            <input required="required" type="text" id="name" name="name">
+            <div id="prompt-1">
+                <label id="name-label" for="name">Name:</label>
+                <input required="required" type="text" id="name" name="name" placeholder="Alex Honnald">
+            </div>
+            <div id="prompt-2">
+                <label id="email-label" for="email">Email:</label>
+                <input required="required" type="email" id="email" name="email" placeholder="alexhonnald@hotmail.com">
+            </div>
+            <div id="prompt-3">
+                <label id="number-label" for="number">How much do you like bouldering? (scale 1-10):</label>
+                <input required="required" type="number" id="number" name="number" min="1" max="10" placeholder="5">
+            </div>
+            <div id="prompt-4">
+                <label id=number-label-2 for="number">How much do you like roped climbing? (scale 1-10):</label>
+                <input required="required" type="number" id="number-label" name="number" min="1" max="10"
+                    placeholder="5">
+            </div>
 
-            <label id=email-label for="email">Email:</label>
-            <input required="required" type="email" id="email" name="email">
-
-            <label id=number-label for="number">How much do you like bouldering? (scale 1-10):</label>
-            <input required="required" type="number" id="number-label" name="number" min="1" max="10">
-
-            <label id=number-label-2 for="number">How much do you like roped climbing? (scale 1-10):</label>
-            <input required="required" type="number" id="number-label-2" name="number" min="1" max="10">
-
-            <label id=dropdown for="dropdown">What's your favorite hold type?</label>
-            <select>
-                <option value="jug">Jug</option>
-                <option value="edge">Edge</option>
-                <option value="sloper">Sloper</option>
-                <option value="pinch">Pinch</option>
-                <option value="pocket">Pocket</option>
-                <option value="side-pull">Side-Pull</option>
-                <option value="undercling">Undercling</option>
-            </select>
-
-            <div>
+            <div id="prompt-5">
+                <label id="dropdown" for="dropdown">What's your favorite hold type?</label>
+                <select id="dropdown">
+                    <option value="jug">Jug</option>
+                    <option value="edge">Edge</option>
+                    <option value="sloper">Sloper</option>
+                    <option value="pinch">Pinch</option>
+                    <option value="pocket">Pocket</option>
+                    <option value="side-pull">Side-Pull</option>
+                    <option value="undercling">Undercling</option>
+                </select>
+            </div>
+            <div id="prompt-6">
+                <label id="colorhold" for="color">What's your favorite color hold?</label>
+                <input type="color" name="colorhold" id="colorhold" value="#FF69B4">
+            </div>
+            <div class="center" id="prompt-7">
                 <label id=radio-list>What's the highest bouldering grade you've climbed?</label>
+                <ol>
+                    <input type="radio" id="V1-V2" name="V-Rating" value="V1-V2">
+                    <label for="V1-V2">V1-V2</label>
 
-                <input type="radio" id="V1-V2" name="V-Rating" value="V1-V2">
-                <label for="V1-V2">V1-V2</label>
+                    <input type="radio" id="V3-V4" name="V-Rating" value="V3-V4">
+                    <label for="V3-V4">V3-V4</label>
 
-                <input type="radio" id="V3-V4" name="V-Rating" value="V3-V4">
-                <label for="V3-V4">V3-V4</label>
+                    <input type="radio" id="V5-V6" name="V-Rating" value="V5-V6">
+                    <label for="V5-V6">V5-V6</label>
 
-                <input type="radio" id="V5-V6" name="V-Rating" value="V5-V6">
-                <label for="V5-V6">V5-V6</label>
+                    <input type="radio" id="V7-V8" name="V-Rating" value="V7-V8">
+                    <label for="V7-V8">V7-V8</label>
 
-                <input type="radio" id="V7-V8" name="V-Rating" value="V7-V8">
-                <label for="V7-V8">V7-V8</label>
+                    <input type="radio" id="V9+" name="V-Rating" value="V9+">
+                    <label for="V9+">V9+</label>
+                </ol>
+            </div>
 
-                <input type="radio" id="V9+" name="V-Rating" value="V9+">
-                <label for="V9+">V9+</label>
+            <div class="center" id="prompt-8">
 
+                <label id=checked-list>What roped climbing grades have you climbed?</label>
+                <ol>
+                    <input type="checkbox" id="5.6-5.7" name="YDS" value="5.6-5.7">
+                    <label for="5.6-5.7">5.6-5.7</label>
+
+                    <input type="checkbox" id="5.8-5.9" name="YDS" value="5.8-5.9">
+                    <label for="5.8-5.9">5.8-5.9</label>
+
+                    <input type="checkbox" id="5.10-5.11" name="YDS" value="5.10-5.11">
+                    <label for="5.10-5.11">5.10-5.11</label>
+
+                    <input type="checkbox" id="5.12-5.13" name="YDS" value="5.12-5.13">
+                    <label for="5.12-5.13">5.12-5.13</label>
+
+                    <input type="checkbox" id="5.14+" name="YDS" value="5.14+">
+                    <label for="5.14+">I'm Adam Ondra</label>
+                </ol>
+            </div>
+            <div id="prompt-9">
+                <label for="additional-comments">Additional Comments?</label>
+                <textarea placeholder="Wow, what a great survey!"></textarea>
             </div>
 
             <div>
-
-                <label id=radio-list>What roped climbing grades have you climbed?</label>
-
-                <input type="checkbox" id="5.6-5.7" name="YDS" value="5.6-5.7">
-                <label for="5.6-5.7">5.6-5.7</label>
-
-                <input type="checkbox" id="5.8-5.9" name="YDS" value="5.8-5.9">
-                <label for="5.8-5.9">5.8-5.9</label>
-
-                <input type="checkbox" id="5.10-5.11" name="YDS" value="5.10-5.11">
-                <label for="5.10-5.11">5.10-5.11</label>
-
-                <input type="checkbox" id="5.12-5.13" name="YDS" value="5.12-5.13">
-                <label for="5.12-5.13">5.12-5.13</label>
-
-                <input type="checkbox" id="5.14+" name="YDS" value="5.14+">
-                <label for="5.14+">I'm Adam Ondra</label>
-
+                <button class="center" id="submit">submit</button>
             </div>
-
-
         </form>
     </body>
 </main>
