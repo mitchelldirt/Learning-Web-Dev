@@ -1,45 +1,72 @@
 <style>
+    html {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: aquamarine;
+        background-color: grey;
+    }
+
     #products {
-    border-top: 2px solid black;
-}
+        border-top: 3px solid black;
+    }
+
     img {
         width: 500px;
         height: 350px;
-;
+        ;
     }
+
     #header-img {
         width: 200px;
         height: 200px;
         justify-content: flex-start;
         align-items: flex-start;
     }
-.nav-link {
-    display: inline-block;
-}
 
-.nav-link a::after {
-    display: inline-block;
-    color: #000;
-    font-size: 80%;
-    font-weight: bold;
-    padding: 0 3px;
-}
+    .nav-link {
+        display: inline-block;
+    }
 
-.center {
+    .nav-link a::after {
+        display: inline-block;
+        color: #000;
+        font-size: 80%;
+        font-weight: bold;
+        padding: 0 3px;
+    }
+
+    .center {
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 50%;
     }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    #video {
+        margin: 15px 0px 15px 0px;
+    }
+
+    header {
+        border-bottom: 3px solid #000;
+    }
+
+    .review_bottom {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .spacing {
+        margin: 15px 0px 15px 0px;
+    }
 </style>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,33 +74,54 @@
     <title>Mudd Mountain Bikes</title>
 </head>
 <header class="container" id="header">
-    <img id="header-img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F_dDUHPa7QgaM%2FS9agrbKyIwI%2FAAAAAAAADZM%2FUykAqTplyS8%2Fs320%2FDH%2Bbike%2BDH%2BMTB%2BT%2Bshirt%2BDesign%2B-%2BDownhill%2BBike%2Brider%2B-%2BDirt%2BRider%2Bfull%2Bbrown.gif&f=1&nofb=1" alt="Person on a mountain bike">
+    <img id="header-img"
+        src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F_dDUHPa7QgaM%2FS9agrbKyIwI%2FAAAAAAAADZM%2FUykAqTplyS8%2Fs320%2FDH%2Bbike%2BDH%2BMTB%2BT%2Bshirt%2BDesign%2B-%2BDownhill%2BBike%2Brider%2B-%2BDirt%2BRider%2Bfull%2Bbrown.gif&f=1&nofb=1"
+        alt="Person on a mountain bike">
     <h1 class="container center-flex">Mudd Mountain Bikes</h1>
-    <nav  id="nav-bar">
-        <ol class="center">
-            <li class="nav-link"><a href="#downhill-bike">Downhill</a></li>
-            <li class="nav-link"><a href="#hardtail-bike">Hardtail</a></li>
-            <li class="nav-link"><a href="#trail-bike">Trail</a></li>
+    <nav class="container" id="nav-bar">
+        <ol class="center review_bottom">
+            <!--Make sure you change the way these look-->
+            <li class="nav-link spacing"><a href="#features">Features</a></li>
+            <li class="nav-link spacing"><a href="#products">Products</a></li>
+            <li class="nav-link spacing"><a href="#contact-info">Contact Us</a></li>
         </ol>
     </nav>
 </header>
+<!--Add in the email submit form here below the header-->
+
+<!--Add the features above the video: You can use the icons from the github repo you saved-->
+
 <body>
-    <!--The below content should be at the bottom of the page (not including footer)-->
-<div id="products" class="container">
-    <div id="downhill-bike">
-        <h2>Muddslide</h2>
-        <img id="downhill-bike-img" src="https://i.pinimg.com/originals/a6/02/8a/a6028aa9fda3e77daa8e9003afd456f2.jpg" alt="Picture of a brown downhill mountain bike">
+    <!--Put text in here saying "You're going to need to know how to ride through mud with your new mudd bike"-->
+    <h2 class="container">Check out this helpful video!</h2>
+    <div class="container" id=vid-div>
+        <iframe id="video" allowfullscreen="" height="350" width="600" frameborder="0"
+            src="https://www.youtube.com/embed/Rvs-B3yWdto"></iframe>
     </div>
-    
-    <div id="hardtail-bike">
-        <h2>Adobe</h2>
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wigglestatic.com%2Fproduct-media%2F101344991%2Fprod178173_Black%2520-%2520Mint_NE_01.jpg%3Fw%3D960%26h%3D430%26a%3D7&f=1&nofb=1" alt="Picture of a hardtail mountain bike.">
+    <!--Put in product descriptions below the names: Put these in a difference color text-->
+    <div id="products" class="container">
+        <div id="downhill-bike">
+            <h2>Muddslide</h2>
+            <img id="downhill-bike-img"
+                src="https://i.pinimg.com/originals/a6/02/8a/a6028aa9fda3e77daa8e9003afd456f2.jpg"
+                alt="Picture of a brown downhill mountain bike">
+        </div>
+
+        <div id="hardtail-bike">
+            <h2>Adobe</h2>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wigglestatic.com%2Fproduct-media%2F101344991%2Fprod178173_Black%2520-%2520Mint_NE_01.jpg%3Fw%3D960%26h%3D430%26a%3D7&f=1&nofb=1"
+                alt="Picture of a hardtail mountain bike.">
+        </div>
+
+        <div id="trail-bike">
+            <h2>Mudd Pit</h2>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tucsonbikerentals.org%2Fwp-content%2Fgallery%2Fride-a-bike-in-tucson-az%2F8313993671_df0583af38_o.jpg&f=1&nofb=1"
+                alt="Picture of a brown trail style mountain bike.">
+        </div>
     </div>
-    
-    <div id="trail-bike">
-        <h2>Mudd Pit</h2>
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tucsonbikerentals.org%2Fwp-content%2Fgallery%2Fride-a-bike-in-tucson-az%2F8313993671_df0583af38_o.jpg&f=1&nofb=1" alt="Picture of a brown trail style mountain bike.">
-    </div>
-</div>
+    <footer>
+        <!--Put your footer in here with contact information to hook up to the contact us link-->
+    </footer>
 </body>
+
 </html>
