@@ -1,10 +1,17 @@
 <style>
-    nav {
-    border-bottom: 1px solid black;
+    #downhill-bike {
+    border-top: 2px solid black;
 }
+    img {
+        width: 500px;
+        height: 350px;
+;
+    }
     #header-img {
-        width: 200;
-        height: 200;
+        width: 200px;
+        height: 200px;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 .nav-link {
     display: inline-block;
@@ -24,6 +31,13 @@
         margin-right: auto;
         width: 50%;
     }
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 </style>
 <html lang="en">
 <head>
@@ -32,9 +46,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mudd Mountain Bikes</title>
 </head>
-<header id="header">
+<header class="container" id="header">
     <img id="header-img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F_dDUHPa7QgaM%2FS9agrbKyIwI%2FAAAAAAAADZM%2FUykAqTplyS8%2Fs320%2FDH%2Bbike%2BDH%2BMTB%2BT%2Bshirt%2BDesign%2B-%2BDownhill%2BBike%2Brider%2B-%2BDirt%2BRider%2Bfull%2Bbrown.gif&f=1&nofb=1" alt="Person on a mountain bike">
-    <h1>Mudd Mountain Bikes</h1>
+    <h1 class="container center-flex">Mudd Mountain Bikes</h1>
     <nav  id="nav-bar">
         <ol class="center">
             <li class="nav-link"><a href="#downhill-bike">Downhill</a></li>
@@ -44,9 +58,11 @@
     </nav>
 </header>
 <body>
+    <!--The below content should be at the bottom of the page (not including footer)-->
+<div class="container">
     <div id="downhill-bike">
         <h2>Muddslide</h2>
-        <img src="https://i.pinimg.com/originals/a6/02/8a/a6028aa9fda3e77daa8e9003afd456f2.jpg" alt="Picture of a brown downhill mountain bike">
+        <img id="downhill-bike-img" src="https://i.pinimg.com/originals/a6/02/8a/a6028aa9fda3e77daa8e9003afd456f2.jpg" alt="Picture of a brown downhill mountain bike">
     </div>
     
     <div id="hardtail-bike">
@@ -58,5 +74,6 @@
         <h2>Mudd Pit</h2>
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tucsonbikerentals.org%2Fwp-content%2Fgallery%2Fride-a-bike-in-tucson-az%2F8313993671_df0583af38_o.jpg&f=1&nofb=1" alt="Picture of a brown trail style mountain bike.">
     </div>
+</div>
 </body>
 </html>
