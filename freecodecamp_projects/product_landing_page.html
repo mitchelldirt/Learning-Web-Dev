@@ -6,13 +6,19 @@
     }
 
     #products {
-        border-top: 3px solid black;
+        margin: 10px 10px 10px 10px;
     }
 
     img {
         width: 500px;
         height: 350px;
         ;
+    }
+
+    svg {
+        width: 15px;
+        height: 15px;
+        color: aquamarine;
     }
 
     #header-img {
@@ -49,6 +55,8 @@
 
     #video {
         margin: 15px 0px 15px 0px;
+        border-style: outset;
+        border: 3px solid aquamarine;
     }
 
     header {
@@ -63,6 +71,48 @@
 
     .spacing {
         margin: 15px 0px 15px 0px;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    form {
+        border: 3px solid #000;
+        padding: 30px 30px 30px 30px;
+    }
+
+    #submit {
+        color: black;
+        background-color: aquamarine;
+        height: 50px;
+    }
+
+    #email {
+        width: 400px;
+        height: 50px;
+        text-align: center;
+    }
+    #trail-bike {
+        margin: 15px 15px 0px 15px;
+        text-align: center;
+        border-style: outset;
+        border: 3px solid black;
+    }
+
+    #downhill-bike {
+        margin: 15px 15px 0px 15px;
+        text-align: center;
+        border-style: outset;
+        border: 3px solid black;
+    }
+
+    #hardtail-bike {
+        margin: 15px 15px 0px 15px;
+        text-align: center;
+        border-style: outset;
+        border: 3px solid black;
     }
 </style>
 <html lang="en">
@@ -81,24 +131,50 @@
     <nav class="container" id="nav-bar">
         <ol class="center review_bottom">
             <!--Make sure you change the way these look-->
-            <li class="nav-link spacing"><a href="#features">Features</a></li>
-            <li class="nav-link spacing"><a href="#products">Products</a></li>
-            <li class="nav-link spacing"><a href="#contact-info">Contact Us</a></li>
+            <li class="nav-link spacing"> <a href="#features"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg> Features</a></li>
+            <li class="nav-link spacing"><a href="#products"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg> Products</a></li>
+            <li class="nav-link spacing"><a href="#contact-info"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                    </svg> Contact Us</a></li>
         </ol>
     </nav>
 </header>
-<!--Add in the email submit form here below the header-->
+<div id="Gnar" class="container center">
+    <h2><b>The Gnarliest Bikes Available</b></h2>
+</div>
+<form class="center container" action="">
+    <input type="email" id="email" placeholder="email@email.com" required="">
+    <input type="submit" name="submit" id="submit">
+</form>
 
 <!--Add the features above the video: You can use the icons from the github repo you saved-->
-
 <body>
-    <!--Put text in here saying "You're going to need to know how to ride through mud with your new mudd bike"-->
-    <h2 class="container">Check out this helpful video!</h2>
+    <h2 class="container">You're going to want to know how to ride your new bike!</h2>
+    <h3 class="container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
+        </svg>Check out this helpful video<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+            fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
+        </svg></h3>
     <div class="container" id=vid-div>
         <iframe id="video" allowfullscreen="" height="350" width="600" frameborder="0"
             src="https://www.youtube.com/embed/Rvs-B3yWdto"></iframe>
     </div>
-    <!--Put in product descriptions below the names: Put these in a difference color text-->
+    <!--Put in product descriptions below the names: Put these in a difference color text *black*-->
     <div id="products" class="container">
         <div id="downhill-bike">
             <h2>Muddslide</h2>
