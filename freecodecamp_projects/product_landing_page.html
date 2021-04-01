@@ -1,8 +1,29 @@
+<!--TODO: 
+1. Add alt text in images / make more accessible
+2. Put the footer in with contact info and social media links
+3. try and put a background image of some sort on the website
+4. Organize your style section by (., #, and element classes)-->
+
 <style>
     html {
         font-family: Georgia, 'Times New Roman', Times, serif;
-        color: aquamarine;
-        background-color: grey;
+        background-color: #5CDB95;
+    }
+
+    h1 {
+        color: #05386B;
+    }
+
+    h2 {
+        color: #05386B;
+    }
+
+    h3 {
+        color: #379683;
+    }
+
+    p {
+        color: #EDF5E1;
     }
 
     #products {
@@ -18,7 +39,11 @@
     svg {
         width: 15px;
         height: 15px;
-        color: aquamarine;
+        color: #05386B;
+    }
+
+    .grid {
+        display: flex;
     }
 
     #header-img {
@@ -34,7 +59,7 @@
 
     .nav-link a::after {
         display: inline-block;
-        color: #000;
+        color: #379683;
         font-size: 80%;
         font-weight: bold;
         padding: 0 3px;
@@ -56,11 +81,11 @@
     #video {
         margin: 15px 0px 15px 0px;
         border-style: outset;
-        border: 3px solid aquamarine;
+        border: 3px solid #379683;
     }
 
     header {
-        border-bottom: 3px solid #000;
+        border-bottom: 3px solid #379683;
     }
 
     .review_bottom {
@@ -73,19 +98,24 @@
         margin: 15px 0px 15px 0px;
     }
 
+    .spacing2 {
+        margin: 25px 0px 25px 0px;
+        padding: 10px 10px 10px 10px;
+    }
+
     a {
         color: black;
         text-decoration: none;
     }
 
     form {
-        border: 3px solid #000;
-        padding: 30px 30px 30px 30px;
+        border: 3px solid #379683;
+        padding: 5px 0px 5px 0px;
     }
 
     #submit {
-        color: black;
-        background-color: aquamarine;
+        color: #EDF5E1;
+        background-color: #05386B;
         height: 50px;
     }
 
@@ -94,28 +124,41 @@
         height: 50px;
         text-align: center;
     }
+
     #trail-bike {
         margin: 15px 15px 0px 15px;
         text-align: center;
         border-style: outset;
-        border: 3px solid black;
+        border: 3px solid #379683;
     }
 
     #downhill-bike {
         margin: 15px 15px 0px 15px;
         text-align: center;
         border-style: outset;
-        border: 3px solid black;
+        border: 3px solid #379683;
     }
 
     #hardtail-bike {
         margin: 15px 15px 0px 15px;
         text-align: center;
         border-style: outset;
-        border: 3px solid black;
+        border: 3px solid #379683;
+    }
+
+    #big-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    body {
+        background-image: url(https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.mountaindome.co.uk%2F&psig=AOvVaw1Fe4OlkcikJysZRAdShV9Z&ust=1617381376108000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDCwaq93e8CFQAAAAAdAAAAABAE);
     }
 </style>
 <html lang="en">
+<div
+    style="background-image: url('https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.mountaindome.co.uk%2F&psig=AOvVaw1Fe4OlkcikJysZRAdShV9Z&ust=1617381376108000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDCwaq93e8CFQAAAAAdAAAAABAE');">
+</div>
 
 <head>
     <meta charset="UTF-8">
@@ -149,52 +192,92 @@
         </ol>
     </nav>
 </header>
-<div id="Gnar" class="container center">
-    <h2><b>The Gnarliest Bikes Available</b></h2>
-</div>
-<form class="center container" action="">
-    <input type="email" id="email" placeholder="email@email.com" required="">
-    <input type="submit" name="submit" id="submit">
-</form>
 
-<!--Add the features above the video: You can use the icons from the github repo you saved-->
 <body>
-    <h2 class="container">You're going to want to know how to ride your new bike!</h2>
-    <h3 class="container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-                d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-        </svg>Check out this helpful video<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-            fill="currentColor">
-            <path fill-rule="evenodd"
-                d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-        </svg></h3>
-    <div class="container" id=vid-div>
-        <iframe id="video" allowfullscreen="" height="350" width="600" frameborder="0"
-            src="https://www.youtube.com/embed/Rvs-B3yWdto"></iframe>
+    <div id="Gnar" class="container center">
+        <h2><b>The Gnarliest Bikes Available</b></h2>
     </div>
-    <!--Put in product descriptions below the names: Put these in a difference color text *black*-->
-    <div id="products" class="container">
-        <div id="downhill-bike">
-            <h2>Muddslide</h2>
-            <img id="downhill-bike-img"
-                src="https://i.pinimg.com/originals/a6/02/8a/a6028aa9fda3e77daa8e9003afd456f2.jpg"
-                alt="Picture of a brown downhill mountain bike">
+    <form class="center container" action="">
+        <input type="email" id="email" placeholder="email@email.com" required="">
+        <input type="submit" name="submit" id="submit">
+    </form>
+    <section id="features">
+        <div class="container">
+            <div class="shipping spacing2">
+                <h2 class="center"><svg id="big-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                        <path
+                            d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
+                    </svg> Fast & Free Shipping</h2>
+                <p>We work with all mail carriers to get you your bike as soon as possible for the lowest price.</p>
+            </div>
         </div>
 
-        <div id="hardtail-bike">
-            <h2>Adobe</h2>
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wigglestatic.com%2Fproduct-media%2F101344991%2Fprod178173_Black%2520-%2520Mint_NE_01.jpg%3Fw%3D960%26h%3D430%26a%3D7&f=1&nofb=1"
-                alt="Picture of a hardtail mountain bike.">
+        <div class="container">
+            <div class="components spacing2">
+                <h2 class="center"><svg id="big-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path
+                            d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                    </svg> Cutting Edge Tech</h2>
+                <p>Here at Mudd Mountain Bikes we only include the highest quality mountain bike parts.</p>
+            </div>
         </div>
 
-        <div id="trail-bike">
-            <h2>Mudd Pit</h2>
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tucsonbikerentals.org%2Fwp-content%2Fgallery%2Fride-a-bike-in-tucson-az%2F8313993671_df0583af38_o.jpg&f=1&nofb=1"
-                alt="Picture of a brown trail style mountain bike.">
+        <div class="container">
+            <div class="shipping spacing2">
+                <h2 class="center"><svg id="big-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg> Stellar Warranty</h2>
+                <p>Included with your bike is a free two-year warranty that covers just about anything.*</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <body>
+        <h2 class="container">You're going to want to know how to ride your new bike!</h2>
+        <h3 class="container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+            </svg>Check out this helpful video<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+            </svg></h3>
+        <div class="container" id=vid-div>
+            <iframe id="video" allowfullscreen="" height="350" width="600" frameborder="0"
+                src="https://www.youtube.com/embed/Rvs-B3yWdto"></iframe>
+        </div>
+        <!--Put in product descriptions below the names: Put these in a difference color text *black*-->
+        <div id="products" class="container">
+            <div id="downhill-bike">
+                <h2>Muddslide</h2>
+                <p id="muddslide-desc"></p>
+                <img id="downhill-bike-img"
+                    src="https://i.pinimg.com/originals/a6/02/8a/a6028aa9fda3e77daa8e9003afd456f2.jpg"
+                    alt="Picture of a brown downhill mountain bike">
+            </div>
+
+            <div id="hardtail-bike">
+                <h2>Adobe</h2>
+                <p id="adobe-desc"></p>
+                <img src="https://surlybikes.com/uploads/bikes/20191114_SUR_ECR_VanityPhotography_450145_002.jpg"
+                    alt="Picture of a hardtail mountain bike.">
+            </div>
+
+            <div id="trail-bike">
+                <h2>Mudd Pit</h2>
+                <p id="muddpit-desc"></p>
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tucsonbikerentals.org%2Fwp-content%2Fgallery%2Fride-a-bike-in-tucson-az%2F8313993671_df0583af38_o.jpg&f=1&nofb=1"
+                    alt="Picture of a brown trail style mountain bike.">
+            </div>
+        </div>
+    </body>
     <footer>
         <!--Put your footer in here with contact information to hook up to the contact us link-->
     </footer>
