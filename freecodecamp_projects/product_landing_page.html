@@ -1,10 +1,3 @@
-<!--TODO: 
-1. Add alt text in images / make more accessible
-2. Put the footer in with contact info and social media links
-3. try and put a background image of some sort on the website
-4. Organize your style section by (., #, and element classes)
-5. You NEED a media query in your code. Try using it for your background image otherwise you could use it for the youtube video possibly???-->
-
 <style>
     html {
         font-family: Georgia, 'Times New Roman', Times, serif;
@@ -27,14 +20,9 @@
         color: #EDF5E1;
     }
 
-    #products {
-        margin: 10px 10px 10px 10px;
-    }
-
     img {
         width: 500px;
         height: 350px;
-        ;
     }
 
     svg {
@@ -43,15 +31,22 @@
         color: #05386B;
     }
 
-    .grid {
-        display: flex;
+    header {
+        border-bottom: 3px solid #379683;
     }
 
-    #header-img {
-        width: 200px;
-        height: 200px;
-        justify-content: flex-start;
-        align-items: flex-start;
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    form {
+        border: 3px solid #379683;
+        padding: 5px 0px 5px 0px;
+    }
+
+    .grid {
+        display: flex;
     }
 
     .nav-link {
@@ -79,16 +74,6 @@
         justify-content: center;
     }
 
-    #video {
-        margin: 15px 0px 15px 0px;
-        border-style: outset;
-        border: 3px solid #379683;
-    }
-
-    header {
-        border-bottom: 3px solid #379683;
-    }
-
     .review_bottom {
         margin: 0;
         padding: 0;
@@ -96,64 +81,97 @@
     }
 
     .spacing {
-        margin: 15px 0px 15px 0px;
+        margin: 15% 0% 15% 0%;
     }
 
     .spacing2 {
-        margin: 25px 0px 25px 0px;
-        padding: 10px 10px 10px 10px;
+        margin: 2% 0% 2% 0%;
+        padding: 2% 2% 2% 2%;
     }
 
-    a {
-        color: black;
-        text-decoration: none;
+    #header-img {
+        width: 200px;
+        height: 200px;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 
-    form {
+    #video {
+        margin: 2% 0% 2% 0%;
+        border-style: outset;
         border: 3px solid #379683;
-        padding: 5px 0px 5px 0px;
     }
 
     #submit {
         color: #EDF5E1;
         background-color: #05386B;
-        height: 50px;
+        height: 4em;
     }
 
     #email {
-        width: 400px;
-        height: 50px;
+        width: 50%;
+        height: 4em;
         text-align: center;
     }
 
     #trail-bike {
-        margin: 15px 15px 0px 15px;
+        margin: 0% 1% 0% 1%;
         text-align: center;
+    }
+
+    #products {
         border-style: outset;
         border: 3px solid #379683;
+        margin-top: 5%;
+        margin-bottom: 1%;
     }
 
     #downhill-bike {
-        margin: 15px 15px 0px 15px;
+        margin: 0% 1% 0% 1%;
         text-align: center;
-        border-style: outset;
-        border: 3px solid #379683;
+    }
+
+    #body {
+        background-image: url()
     }
 
     #hardtail-bike {
-        margin: 15px 15px 0px 15px;
+        margin: 0% 1% 0% 1%;
         text-align: center;
-        border-style: outset;
-        border: 3px solid #379683;
+        border-left: 3px solid #379683;
+        border-right: 3px solid #379683;
     }
 
     #big-icon {
-        width: 30px;
-        height: 30px;
+        width: 10%;
+        height: auto;
     }
 
-    body {
-        background-image: url(https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.mountaindome.co.uk%2F&psig=AOvVaw1Fe4OlkcikJysZRAdShV9Z&ust=1617381376108000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDCwaq93e8CFQAAAAAdAAAAABAE);
+    #footer-icon {
+        width: 3%;
+        height: 3%;
+        padding-left: 1%;
+    }
+
+    #footer {
+        background-color: #379683;
+        padding-top: 3%;
+        justify-content: flex-end;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #copyright {
+        padding: 0% 0% 0% 1%;
+        font-size: 170%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    @media screen and (max-width: 1500px) {
+        .column {
+            width: 100%;
+            flex-wrap: wrap;
+        }
     }
 </style>
 <html lang="en">
@@ -194,7 +212,7 @@
     </nav>
 </header>
 
-<body>
+<body id="body">
     <div id="Gnar" class="container center">
         <h2><b>The Gnarliest Bikes Available</b></h2>
     </div>
@@ -254,11 +272,12 @@
             <iframe id="video" allowfullscreen="" height="350" width="600" frameborder="0"
                 src="https://www.youtube.com/embed/Rvs-B3yWdto"></iframe>
         </div>
-        <!--Put in product descriptions below the names: Put these in a difference color text *black*-->
-        <div id="products" class="container">
+        <div id="products" class="container column">
             <div id="downhill-bike">
                 <h2>Muddslide</h2>
-                <p id="muddslide-desc"></p>
+                <p id="muddslide-desc">The Muddslide is a downhill bike designed for gnarly gravity riding. From bike
+                    park days with friends to World Cup downhill races, you can hit big jumps and charge rocky lines on
+                    the Muddslide.</p>
                 <img id="downhill-bike-img"
                     src="https://i.pinimg.com/originals/a6/02/8a/a6028aa9fda3e77daa8e9003afd456f2.jpg"
                     alt="Picture of a brown downhill mountain bike">
@@ -266,21 +285,30 @@
 
             <div id="hardtail-bike">
                 <h2>Adobe</h2>
-                <p id="adobe-desc"></p>
+                <p id="adobe-desc">Adobe is where race-worthy mountain bikes begin. The smooth, lightweight RockShox
+                    fork and upgraded parts make this model the best choice for new riders who want a fast cross country
+                    hardtail that will hold its own against our higher-end race bikes.</p>
                 <img src="https://surlybikes.com/uploads/bikes/20191114_SUR_ECR_VanityPhotography_450145_002.jpg"
                     alt="Picture of a hardtail mountain bike.">
             </div>
 
             <div id="trail-bike">
                 <h2>Mudd Pit</h2>
-                <p id="muddpit-desc"></p>
+                <p id="muddpit-desc">Mudd Pit bikes boast all-rounder trail geometry with moderate chainstay and
+                    wheelbase lengths combined with a relaxed head angle; these bikes feel agile in twisty trails while
+                    ensuring confidence at high speed.</p>
                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tucsonbikerentals.org%2Fwp-content%2Fgallery%2Fride-a-bike-in-tucson-az%2F8313993671_df0583af38_o.jpg&f=1&nofb=1"
                     alt="Picture of a brown trail style mountain bike.">
             </div>
         </div>
     </body>
-    <footer>
-        <!--Put your footer in here with contact information to hook up to the contact us link-->
+    <footer id="footer" class="">
+        <div id="contact-info"></div>
+        <img id="footer-icon" src="https://simpleicons.org/icons/instagram.svg" alt="Instagram social media icon.">
+        <img id="footer-icon" src="https://simpleicons.org/icons/twitter.svg" alt="Twitter social media icon.">
+        <img id="footer-icon" src="https://simpleicons.org/icons/facebook.svg" alt="Facebook social media icon.">
+
+        <span id="copyright">Copyright 2021, Mudd Mountain Bikes</span>
     </footer>
 </body>
 
