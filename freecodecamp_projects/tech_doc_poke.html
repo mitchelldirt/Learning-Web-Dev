@@ -1,0 +1,234 @@
+<!--TO-DO:
+1. Change the headers to <header> elements
+2. Copy and paste description paragraphs of each city
+3. Put lists of each town under the paragraph
+4. Put a fun fact under each of the towns using a <code> element this can be
+    about the town or just a general pokemon fact-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Documentation</title>
+    <style>
+        #navbar {
+            position: fixed;
+            min-width: 290px;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-right-color: currentcolor;
+            border-color: antiquewhite;
+        }
+
+        #navbar a {
+            display: block;
+            padding: 15px 35px;
+            color: antiquewhite;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #navbar li {
+            list-style: none;
+        }
+
+        #main-doc {
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .main-section {
+            padding: 7% 10% 7% 10%;
+        }
+
+        body {
+            background-color: black;
+            color: antiquewhite;
+        }
+
+        header {
+            color: yellow;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.125em;
+            line-height: 150%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid cyan;
+        }
+
+        table {
+            margin: 10% 0% 10% 0%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body translate="no">
+    <nav id="navbar">
+        <header class="center">Pokemon Region Documentation:</header>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#kanto_region">Kanto Region</a></li>
+            <li><a href="#jhoto_region">Jhoto Region</a></li>
+            <li><a href="#hoenn_region">Hoenn Region</a></li>
+            <li><a href="#sinnoh_region">Sinnoh Region</a></li>
+            <li><a href="#unova_region">Unova Region</a></li>
+            <li><a href="#kalos_region">Kalos Region</a></li>
+            <li><a href="#alola_region">Alola Region</a></li>
+            <li><a href="#galar_region">Galar Region</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+
+        <section id="introduction" class="main-section">
+            <header><b>Introduction</b></header>
+            <p>Regions are areas in the Pokémon universe that are smaller parts of a nation. Each region has their own
+                Pokémon Professor, who provides a unique set of Starter Pokémon for young Trainers. Each region also has
+                a unique set of eight Gym Leaders, along with the regional Elite Four. In some cases, regions can share
+                Elite Four divisions, such as Johto and Kanto. </p>
+
+            <p><u>Each section will be structured as follows:</u></p>
+            <ol>
+                <li>Name of city.</li>
+                <li>Information on the city.</li>
+                <li>Cities in the region.</li>
+                <li>Slogan of each of the cities in the region.</li>
+                <li>Fun fact about the city or pokemon in general.</li>
+            </ol>
+        </section>
+
+        <section id="kanto_region" class="main-section">
+            <header>Kanto Region</header>
+            <article>
+                <p>Kanto was the first region to be introduced in the game series, featured in the Red, Blue and Yellow
+                    games along with the Generation III remakes and the Generation VII remakes. It is also accessible in
+                    the latter portion of Pokémon Gold, Silver, and Crystal after defeating the Elite Four. </p>
+                <p>Like most regions, there is a theme regarding the names of towns and cities in Kanto. Most locations
+                    in Kanto are named after a color. The regional Pokémon professor is Professor Oak, who resides in
+                    Pallet Town. </p>
+            </article>
+            <table>
+                <tr>
+                    <th>City</th>
+                    <th>Slogan</th>
+                </tr>
+                
+                <tr>
+                    <td>Pallet Town</td>
+                    <td>A Pure White Beginning</td>
+                </tr>
+
+                <tr>
+                    <td>Viridian City</td>
+                    <td>The City of Evergreen</td>
+                </tr>
+
+                <tr>
+                    <td>Pewter City</td>
+                    <td>Between Rugged Mountains</td>
+                </tr>
+
+                <tr>
+                    <td>Cerulean City</td>
+                    <td>The Floral Lagoon City</td>
+                </tr>
+
+                <tr>
+                    <td>Vermillion City</td>
+                    <td>The Port of Exquisite Sunsets</td>
+                </tr>
+
+                <tr>
+                    <td>Lavender Town</td>
+                    <td>The Noble Town</td>
+                </tr>
+
+                <tr>
+                    <td>Celadon City</td>
+                    <td>City of the Rainbow's Colors</td>
+                </tr>
+
+                <tr>
+                    <td>Fuchsia City</td>
+                    <td>Happening and Passing City</td>
+                </tr>
+
+                <tr>
+                    <td>Saffron City</td>
+                    <td>Shining Big City</td>
+                </tr>
+
+                <tr>
+                    <td>Cinnabar Island</td>
+                    <td>The Ravaged Town of the Past</td>
+                </tr>
+
+                <tr>
+                    <td>Indigo Plateau</td>
+                    <td>The ultimate Goal of Trainers</td>
+                </tr>
+            </table>
+            <code><b>Fun Fact!   </b>The Sevii Islands are a group of islands located south of the Kanto region. They are not to be confused with the Orange Islands, another island group near Kanto or the Blue Islands near Hoenn. The Sevii Islands are accessible in Pokémon FireRed and LeafGreen after the player defeats Blaine. They serve the purpose of a major side quest involving Bill and is also where the player can catch Pokémon from Pokémon Gold and Silver. There are nine islands in all, and each of them is accessible once the player does something special. The islanders are ferried between the islands by the Seagallop. </code>
+        </section>
+
+        <section id="jhoto_region" class="main-section">
+            <header>Jhoto Region</header>
+            <article>
+
+            </article>
+
+            <table></table>
+        </section>
+
+        <section id="hoenn_region" class="main-section">
+            <header>Hoenn Region</header>
+
+        </section>
+
+        <section id="sinnoh_region" class="main-section">
+            <header>Sinnoh Region</header>
+
+        </section>
+
+        <section id="unova_region" class="main-section">
+            <header>Unova Region</header>
+
+        </section>
+
+        <section id="kalos_region" class="main-section">
+            <header>Kalos Region</header>
+
+        </section>
+
+        <section id="alola_region" class="main-section">
+            <header>Alola Region</header>
+
+        </section>
+
+        <section id="galar_region" class="main-section">
+            <header>Galar Region</header>
+
+        </section>
+    </main>
+</body>
+
+</html>
