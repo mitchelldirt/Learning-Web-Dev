@@ -17,6 +17,10 @@
         border: 2px solid #ff4838;
       }
 
+      #product-landing-page {
+        width: 105%;
+      }
+
       .flex {
         display: flex;
         justify-content: space-around;
@@ -32,6 +36,8 @@
       .column-flex {
         display: flex;
         flex-direction: column;
+        align-content: space-around;
+        justify-content: space-between;
       }
 
       .project {
@@ -40,9 +46,22 @@
         border-radius: 2px;
       }
 
+      .project-image {
+        height: calc(100% - 6.8rem);
+        width: 100%;
+        object-fit: cover;
+      }
+
       a {
         text-decoration: none;
         color: white;
+      }
+
+      a,
+      img {
+        width: 95%;
+        height: 250px;
+        align-items: center;
       }
 
       header {
@@ -213,34 +232,48 @@
     </table>
 
     <section class="column-flex" id="projects">
+      <h2>Projects</h2>
       <a
-        class="project"
+        id="pokedoc"
+        class="project-image column-flex"
         href="https://codepen.io/mitchelldirt/pen/MWJmLEX"
         target="_blank"
-        ><img src="" alt="" />
+        ><img
+          src="https://i.postimg.cc/q7RPt6wz/tech-doc.png"
+          alt="Image of my technical document project" />
         <p></p
       ></a>
       <a
-        class="project"
-        href="https://codepen.io/mitchelldirt/pen/VwPjgPX"
-        target="_blank"
-        ><img src="" alt="" />
-        <p></p
-      ></a>
-      <a
-        class="project"
+        id="tribute-page"
+        class="project-image column-flex"
         href="https://codepen.io/mitchelldirt/pen/VwPjGea"
         target="_blank"
-        ><img src="" alt="" />
+        ><img
+          src="https://i.postimg.cc/prN41GHF/tribute-page.png"
+          alt="Image of my tribute page project" />
         <p></p
       ></a>
       <a
-        class="project"
+        id="survey"
+        class="project-image column-flex"
+        href="https://codepen.io/mitchelldirt/pen/VwPjgPX"
+        target="_blank"
+        ><img
+          src="https://i.postimg.cc/MTfg5khw/survey.png"
+          alt="Image of my survey page project" />
+        <p></p
+      ></a>
+      <a
+        id="product-landing-page"
+        class="project-image column-flex"
         href="https://codepen.io/mitchelldirt/pen/bGgWBzv"
         target="_blank"
-        ><img src="" alt="" />
+        ><img
+          src="https://i.postimg.cc/rpPv5yZg/product-landing-page.png"
+          alt="Image of my product landing page project" />
         <p></p
       ></a>
     </section>
   </body>
+  <footer></footer>
 </html>
