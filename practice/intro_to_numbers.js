@@ -16,10 +16,10 @@ myNumber = myNumber + 3;
 console.log(myNumber);
 
 // You can check the type of your variable using the below.
-console.log(typeof(myNumber));
+console.log(typeof (myNumber));
 
 // The below example shows changing the string `myNumber` to a variable, adds 3 to it, and then checks it type.
-console.log(typeof(Number(myNumber) + 3));
+console.log(typeof (Number(myNumber) + 3));
 
 // Below are some simple examples of code utilizing the type Number.
 console.log(10 + 7);
@@ -79,3 +79,28 @@ console.log(var1 !== var3);
 
 // `var1` and `var2` are the same and therefore will return boolean value False.
 console.log(var1 !== var2);
+
+// adding a negative to a variable containing a number before hand makes it negative.
+let x = 5;
+console.log(-x);
+
+/* Earlier you were shown if you added a number and a string it would 
+convert the number to a string and add it to the original string. */
+// for division and subtraction it will convert the string value to a number value instead.
+let i = 3;
+let stringi = "3";
+console.log(i + stringi); // 33 because number three is tacked onto the string three.
+console.log(i - stringi); // 0 because `stringi` is converted to a number.
+console.log(i / stringi); // 1 because `stringi` is converted to a number.
+
+// unary operations have higher precedence than binary ones. +a will go because a - b.
+
+//example of why you would use commas in code (it's not super readable so think before using):
+let a;
+let b;
+let c;
+for (a = 1, b = 3, c = a * b; a < 10; a++) {
+    //stuff in here
+}
+
+// spaces, \t, \n all are 0 in number form because they're all spaces.
