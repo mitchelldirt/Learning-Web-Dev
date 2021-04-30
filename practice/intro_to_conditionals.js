@@ -95,4 +95,48 @@ true || alert("Did not print: Failure");
 false || alert("Printed Successfully");
 
 // NEW SECTION: && AND operator
+let result2 = a && b;
+hour = 12;
+minute = 30;
 
+if (hour == 12 && minute == 30) {
+    console.log('The time is 12:30');
+}
+
+if (1 && 0) {
+    console.log("won't work, because 0 == false");
+}
+
+// && Looks for the first false value unlike or which looks for the first true one.
+// If first operand is true it reuturns second one:
+console.log(1 && 0); // 0
+console.log(1 && 5); // 5
+
+// See below where first false value is returned.
+console.log(1 && 2 && null && 3); // null
+
+// When all are true last one is returned
+console.log(1 && 2 && 3); // 3
+
+// the NOT operator returns the inverse boolean value, examples below:
+console.log(!true); // false
+console.log(!0); // true
+
+// a double NOT converts the value to boolean and return inverse
+console.log(!!"string"); // true
+console.log(!!null ); // false
+
+// Boolean is a more verbose way to do the above
+console.log(Boolean("string")); // true
+console.log(Boolean(null)); // false
+
+// && is higher precedence than ||
+
+if (14 <= age <= 90) {
+    console.log("All clear");
+}
+
+if (!(age >= 14 && age <= 90));
+if (age < 14 || age > 90);
+
+// Write login prompt code below:
