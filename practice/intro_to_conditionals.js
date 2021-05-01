@@ -60,12 +60,13 @@ console.log(greeting); // Will output "ahhhh, right on time" because hour == 15.
 // New section on logical operators (OR ||, AND &&, NOT !)
 
 // Examples of OR operator below:
+let a = 2
 let result = a || b; // This is just syntax if you use the operator initializing a variable.
 
 // This is a more practical example of || operator.
 // You can pass more than one argument. weekend is the third argument show in the example below.
 // Looks for the first true value unlike and which looks for all true values (will be shown below)
-let hour = 5;
+hour = 5;
 let isWeekend = true;
 
 if (hour < 6 || hour > 5 || isWeekend) {
@@ -75,12 +76,12 @@ if (hour < 6 || hour > 5 || isWeekend) {
 console.log(call);
 
 // You'll have to run these in browser to see the results in console.
-alert(1 || 0); // 1 (1 is truthy)
+console.log(1 || 0); // 1 (1 is truthy)
 
-alert(null || 1); // 1 (1 is the first truthy value)
-alert(null || 0 || 1); // 1 (the first truthy value)
+console.log(null || 1); // 1 (1 is the first truthy value)
+console.log(null || 0 || 1); // 1 (the first truthy value)
 
-alert(undefined || null || 0); // 0 (all falsy, returns the last value)
+console.log(undefined || null || 0); // 0 (all falsy, returns the last value)
 
 // Below is a very practical use of the OR || operator:
 let firstName = "";
@@ -91,10 +92,11 @@ console.log(firstName || lastName || nickName || "Anonymous"); // If everything 
 
 // Below shows another practical use (Could be actual printer message)
 
-true || alert("Did not print: Failure");
-false || alert("Printed Successfully");
+true || console.log("Did not print: Failure");
+false || console.log("Printed Successfully");
 
 // NEW SECTION: && AND operator
+let b = 4;
 let result2 = a && b;
 hour = 12;
 minute = 30;
@@ -124,14 +126,14 @@ console.log(!0); // true
 
 // a double NOT converts the value to boolean and return inverse
 console.log(!!"string"); // true
-console.log(!!null ); // false
+console.log(!!null); // false
 
 // Boolean is a more verbose way to do the above
 console.log(Boolean("string")); // true
 console.log(Boolean(null)); // false
 
 // && is higher precedence than ||
-
+let age = 35
 if (14 <= age <= 90) {
     console.log("All clear");
 }
@@ -140,3 +142,61 @@ if (!(age >= 14 && age <= 90));
 if (age < 14 || age > 90);
 
 // Write login prompt code below:
+let username = prompt('Please enter your name to login', '');
+
+if (username === 'Admin') {
+    let pass = prompt('What\'s the password', '');
+    if (pass === 'TheMaster') {
+        alert('Welcome!');
+    }
+    else if (pass === '' || pass === null) {
+        alert('Canceled');
+    }
+    else {
+        alert('I don\'t know you');
+    }
+} else if (username === '' || username === null) {
+    alert('Canceled');
+}
+else {
+    alert('I don\'t know you');
+}
+
+// format or statements like this if doing multiple conditions.
+
+let x = 5;
+
+if (x === 3 || x === 5 || x === 7 || x === 9) {
+    console.log('wowza');
+}
+
+// EXAMPLE OF SWITCH CASE.
+const select = document.querySelector('select');
+const para = document.querySelector('p');
+
+select.addEventListener('change', setWeather);
+
+function setWeather() {
+    const choice = select.value;
+
+    switch (choice) {
+        case 'sunny':
+            para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+            break;
+        case 'rainy':
+            para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+            break;
+        case 'snowing':
+            para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+            break;
+        case 'overcast':
+            para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+            break;
+        default:
+            para.textContent = '';
+    }
+}
+
+// This is the syntax for a Ternary operator (?) -->  ( condition ) ? run this code : run this code instead
+
+// BELOW HERE IS THE CODE FOR THE CALENDAR PROBLEM ON MDN DOCS
