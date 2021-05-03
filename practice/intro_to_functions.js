@@ -28,5 +28,12 @@ let madeAString = myArray.join(' ');
 let madeAString = myArray.join();
 // returns 'I,love,chocolate,frogs'
 
-//YOU'RE AT ACTIVE LEARNING, PLAYING WITH SCOPE MDN.
+//BE CAREFUL ABOUT FUNCTION SCOPE, REFERENCE BACK TO MDN DOCS IF YOU NEED TO!
+
+// Section on return values below
+// Example of function with return value below
+function random(number) {
+    return Math.floor(Math.random() * number);
+}
+
 

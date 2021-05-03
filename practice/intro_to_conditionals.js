@@ -447,6 +447,7 @@ if (machineActive) {
             response = 'This is not possible, an error has ocurred';
             break;
     }
+}
 
     let pwd = 'cheese';
     let machineResult;
@@ -461,7 +462,7 @@ if (machineActive) {
     }
 
     // Javascript.info problem below
-    let jsName = prompt('What is the real name of javascript?')
+    let jsName = prompt('What is the real name of javascript?');
     alert(jsName === 'ECMAScript' ? 'That\'s right!' : 'You don\'t know? ECMAScript!');
 
     // Javascript.info problem below
@@ -480,4 +481,3 @@ if (machineActive) {
     // Javascript.info problem below
     result = (a + b < 4) ? 'Below' : 'Over';
 
-// Javascript.info problem below
