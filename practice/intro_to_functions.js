@@ -39,15 +39,15 @@ function random(number) {
 // Example of a function without a set return value below:
 function favoriteAnimal(animal) {
     console.log(animal + " is my favorite animal!")
-  }
-  
-  favoriteAnimal('Goat')
+}
+
+favoriteAnimal('Goat')
 
 // JASVASCRIPT.INFO NOTES BELOW:
 
 // Initial function example
 function showMessage() {
-    alert( 'Hello Everyone!' );
+    alert('Hello Everyone!');
 }
 
 showMessage();
@@ -92,38 +92,107 @@ showMessage4('Ann', 'What\'s up?');
 function showMessage5(from, text = 'No text given') {
 
     from = '*' + from + '*'; // make "from" look nicer
-  
-    alert( from + ': ' + text );
-  }
-  
-  let from = "Ann";
-  
-  showMessage5(from, "Hello"); // *Ann*: Hello
-  
-  // the value of "from" is the same, the function modified a local copy
-  alert( from ); // Ann
 
-  // You can do more complex default values such as anotherFunction() like shown below:
-  function showMessage6(from, text = anotherFunction()) {
+    alert(from + ': ' + text);
+}
+
+let from = "Ann";
+
+showMessage5(from, "Hello"); // *Ann*: Hello
+
+// the value of "from" is the same, the function modified a local copy
+alert(from); // Ann
+
+// You can do more complex default values such as anotherFunction() like shown below:
+function showMessage6(from, text = anotherFunction()) {
     // Another way to declare defauly values  
     if (text === undefined) {
-          text ='Empty Message';
-      }
+        text = 'Empty Message';
+    }
 
-      // ANOTHER way to do default values
-      text = text || 'Empty Message';
+    // ANOTHER way to do default values
+    text = text || 'Empty Message';
 
 
     // anotherFunction() only executed if no text given
     // its result becomes the value of text
-  }
+}
 
 // Return values,,, again
-  function sum(a, b) {
-      return a + b;
-  }
+function sum(a, b) {
+    return a + b;
+}
 
-  let result = sum(1, 2);
-  alert(result); // Will output 3
+let result = sum(1, 2);
+alert(result); // Will output 3
 
-  // YOU ARE AT THE RETURNING A VALUE SECTION OF THE JSINFO ARTICLE!
+// YOU ARE AT THE RETURNING A VALUE SECTION OF THE JSINFO ARTICLE!
+function checkAge(age) {
+    age > 18 ? true : confirm('You allowed in here?');
+}
+
+function checkAge2(age) {
+    return age > 18 || confirm('You allowed to be in here?')
+}
+
+function min(a, b) {
+    return (a < b) ? a : b;
+}
+
+function pow(x, n) {
+    x = prompt('Please enter a first number');
+    n = prompt('Please enter a second number');
+    return Number(x) ** Number(n);
+}
+
+pow(3, 4);
+
+// Anonymous functions are used frequently in JS
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+}
+
+// EXAMPLE OF USEFULNESS OF ANON FUNCTIONS BELOW
+
+ask(
+    "Do you agree?",
+    function () { alert("You agreed."); },
+    function () { alert("You canceled the execution."); }
+);
+
+// Function declaration vs function expression
+// Function declaration below
+function sum(a, b) {
+    return a + b;
+}
+
+// Function expression below
+let sumFunction = function sum(a, b) {
+    return a + b;
+}
+
+// Global functions are available from anywhere on the page
+// See below for an example
+// YOU CANNOT ACHIEVE THIS SAME EFFECT WITH FUNCTION EXPRESSIONS
+sayHi("John"); // Hello, John
+
+function sayHi(name) {
+    alert(`Hello, ${name}`);
+}
+
+/* Function declaration is preferred but function expression
+can be good for functions in functions */
+
+// Arrow functions should be used rather than function expressions
+let sum = x => x * 2;
+
+/* Shorter version of anon function expressions using arrow functions below */
+() => alert('You agreed.');
+() => alert('You canceled :(');
+
+
+
+
+
+
