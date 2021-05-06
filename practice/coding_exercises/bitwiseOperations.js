@@ -13,9 +13,9 @@ function bitwiseAND(n1, n2) {
 			currentNumber = n1[i];
 			result.push(currentNumber);
 		} else if (result === undefined) {
-            result.push('0');
-        } 
-        else {
+			result.push('0');
+		}
+		else {
 			result.push('0');
 		}
 	}
@@ -23,7 +23,7 @@ function bitwiseAND(n1, n2) {
 		let numberToAdd = parseInt(result[x]);
 		finalResult += numberToAdd;
 	}
-    return finalResult;
+	return finalResult;
 }
 
 bitwiseAND(6, 23);
