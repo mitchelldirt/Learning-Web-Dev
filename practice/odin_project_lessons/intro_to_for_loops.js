@@ -133,3 +133,72 @@ for (i = 0; i < people.length; i++) {
 // Below slices the comma and space at the end off then replaces with a period
 refused.textContent = refused.textContent.slice(0, refused.textContent.length - 2) + '.';
 admitted.textContent = admitted.textContent.slice(0, admitted.textContent.length - 2) + '.';
+
+// You can label a for loop which is useful for breaking out of both inner and outer nested for loops
+outer: for (let i = 0; i < 3; i++) {
+
+    for (let j = 0; j < 3; j++) {
+
+        let input = prompt(`Value at coords (${i},${j})`, '');
+
+        // if an empty string or canceled, then break out of both loops
+        if (!input) break outer; // (*)
+
+        // do something with the value...
+    }
+}
+alert('Done!');
+
+// For loop vs while loop
+// for loop
+for (let i = 0; i < 3; i++) {
+    alert(`number ${i}!`);
+}
+
+// While loop
+let i = 0
+while (i < 3) {
+    alert(`number ${i}!`);
+    i++;
+}
+
+// task from javascript.info
+
+function isNumOver100(numberOver100) {
+    numberOver100 = prompt('Please enter a number over 100 (only numeric characters).');
+    while (numberOver100 > 0) {
+        if (numberOver100 > 100) {
+            alert(`Good job! ${numberOver100} is greater than 100!`)
+            break;
+        } else if (numberOver100 < 100) {
+            alert(`Please try again, ${numberOver100} is less than 100 :(`);
+        } else {
+            alert('You canceled the selection')
+            break;
+        }
+        numberOver100 = prompt('Please enter a number over 100 (only numeric characters).');
+    }
+}
+
+// Cleaner way to do the above with a do while loop
+let num;
+
+do {
+    num = prompt("Enter a number greater than 100?", 0);
+} while (num <= 100 && num);
+
+// Prime number loop
+// If this confuses you try running 7 % 1 through 7 % 7 in browser console and you'll see how 
+// prime numbers work and why this function operates correctly.
+function previousPrimeNums() {
+    let n = 10;
+    nextPrime:
+    for (let i = 2; i <= n; i++) { // for each i...
+
+        for (let j = 2; j < i; j++) { // look for a divisor..
+            if (i % j == 0) continue nextPrime; // not a prime, go next i
+        }
+
+        alert(i); // a prime
+    }
+}
