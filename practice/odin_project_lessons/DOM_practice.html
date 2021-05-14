@@ -7,6 +7,7 @@
     <div id="container">
         <div class="content">
             This is the glorious text-content!
+            <button id='btn'>Click Me!</button>
         </div>
     </div>
     <script>
@@ -36,5 +37,39 @@
         pinkDiv.appendChild(p2);
 
         container.appendChild(pinkDiv);
+
+        // This is how you would put events on an html element
+        const btn = document.querySelector('#btn');
+        btn.onClick = () => alert('Hello World');
+
+        // alternatively you could add an event listener
+        btn.addEventListener('click', () => {
+            alert('Hello World!');
+        });
+
+        // The above can also be done with a regular function call like below
+        function alertHelloWorld() {
+            alert('Hello World!');
+        }
+
+        btn.onClick = alertHelloWorld;
+
+        btn.addEventListener('click', alertHelloWorld);
+
+        btn.addEventListener('click', function (e) {
+            e.target.style.background = 'blue';
+        });
+
+        // You can add event listeners to groups of like objects
+        const buttons = document.querySelectorAll('button');
+
+        // we use the .forEach method to iterate through each button
+        buttons.forEach((button) => {
+
+            // and for each one we add a 'click' listener
+            button.addEventListener('click', () => {
+                alert(button.id);
+            });
+        });
     </script>
 </body>
