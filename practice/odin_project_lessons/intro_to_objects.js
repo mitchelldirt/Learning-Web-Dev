@@ -110,5 +110,65 @@ let me = {
     age: 21,
 };
 
+// Below is the 'in' operator. You can use it like this or reference the variable that stores the property if you'd like.
 console.log('name' in me); // true
 console.log('wearsGlasses' in me); // false
+
+// The reason that you use the in operator and don't check that something is undefined is because a property could be set as undefined.
+
+// You can use the for in loops to loop through the properties or values in an object.
+for (let key in user) {
+    // keys
+    alert(key);  // name, age, height
+    // values for the keys
+    alert(user[key]); // Mitchell, 21, 6FT 0IN
+}
+
+// When iterating through the keys nd their values the list is sorted by number if they are all integers and creation if they aren't.
+
+// Below is the first skills test on the javascript.info site
+let user3 = {
+    name: 'John',
+    surname: 'Smith',
+}
+
+console.log(user3.name);
+user3.name = 'Pete';
+console.log(user3.name);
+delete user3.name;
+console.log(user3.name);
+
+// Below is the second skills test on the javascript.info site
+let salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+}
+let totalSalary = 0;
+for (let key in salaries) {
+    totalSalary += salaries[key];
+}
+console.log(totalSalary);
+
+// Below is the final skills test on the javascript.info site
+// Finish when you land in seattle.
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+}
+
+function multiplyNumeric(objParam) {
+
+    for (let key in objParam) {
+        let isNumber = objParam[key];
+        if (isNumber == Number) {
+            isNumber *= 2;
+        } else {
+            continue;
+        }
+    }
+    return objParam;
+}
+
+console.log(multiplyNumeric(menu));
