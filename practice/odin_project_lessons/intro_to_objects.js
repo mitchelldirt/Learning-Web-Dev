@@ -152,6 +152,7 @@ console.log(totalSalary);
 
 // Below is the final skills test on the javascript.info site
 // Finish when you land in seattle.
+// TYPEOF RETURNS TYPE AS A STRING
 let menu = {
     width: 200,
     height: 300,
@@ -161,9 +162,10 @@ let menu = {
 function multiplyNumeric(objParam) {
 
     for (let key in objParam) {
-        let isNumber = objParam[key];
-        if (isNumber == Number) {
-            isNumber *= 2;
+        let isNumber;
+        isNumber = typeof objParam[key];
+        if (isNumber === "number") {
+            objParam[key] *= 2;
         } else {
             continue;
         }
