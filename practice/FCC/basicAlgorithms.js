@@ -130,3 +130,72 @@ function frankenSplice(arr1, arr2, n) {
 }
 
 frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+// Are there false values in the array
+function bouncer(arr) {
+    let newArray = [...arr];
+    for (let i = 0; i < newArray.length; i++) {
+        newArray[i] = Boolean(newArray[i]);
+    }
+    let amountToIndex = arr.length
+    for (let i = 0; i < amountToIndex; i++) {
+        if (newArray[i] === false) {
+            arr.splice(i, 1);
+            newArray.splice(i, 1);
+            i--;
+        } else {
+            continue;
+        }
+    }
+    return arr;
+}
+
+// Where does the value belong in an array
+function getIndexToIns(arr, num) {
+    arr.push(num);
+    console.log(arr);
+    arr.sort(function (a, b) { return a - b });
+    console.log(arr);
+    let result = arr.indexOf(num);
+    return result;
+}
+
+getIndexToIns([3, 10, 5], 3);
+
+// String contains string
+function mutation(arr) {
+    let firstWord = arr[0].toLowerCase();
+    let secondWordSplit = arr[1].toLowerCase().split("");
+    for (let i = 0; i < secondWordSplit.length; i++) {
+        if (firstWord.includes(secondWordSplit[i])) {
+            continue;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+
+mutation(["hello", "hey"]);
+
+// Split array into arrays
+function chunkArrayInGroups(arr, size) {
+    let count = 0;
+    let arrayOfArrays = [];
+    let newArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (count === size) {
+            arrayOfArrays.push(newArray);
+            newArray = [];
+            count = 0;
+            i--;
+        } else if (count < size) {
+            newArray.push(arr[i]);
+            count += 1;
+        }
+    }
+    arrayOfArrays.push(newArray);
+    return arrayOfArrays;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);
