@@ -36,3 +36,10 @@ let fixedValue = 4;
 function incrementor (value) {
     value = fixedValue;
 }
+
+// BELOW IS AN EXAMPLE OF MAP BASED OFF OF AN ARRAY OF MOVIE OBJECTS!
+let ratings = watchList.map(item => ({
+  title: item["Title"],
+  rating: item["imdbRating"]
+}))
+
