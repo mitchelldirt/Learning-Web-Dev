@@ -136,3 +136,18 @@ function add(x) {
 }
 
 add(5)(15)(30); // 50
+
+function Book(title, author, numPages, hasItBeenRead) {
+  this.title = title;
+  this.author = author;
+  this.numPages = numPages;
+  this.hasItBeenRead = hasItBeenRead;
+}
+
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", "295 Pages", "not read yet");
+
+function info(obj) {
+  return `${obj.title} by ${obj.author} is ${obj.numPages} and has ${obj.hasItBeenRead}`;
+}
+
+console.log(info(theHobbit));
