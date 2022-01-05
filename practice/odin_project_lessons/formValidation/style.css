@@ -3,6 +3,17 @@ body {
     width: 200px;
     padding: 0;
     margin : 0 auto;
+    background-color: lightblue;
+  }
+
+  form {
+    margin-top: 100%;
+    background-color: white;
+    padding: 10% 10% 10% 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   
   p * {
@@ -42,7 +53,7 @@ body {
     color: white;
     background-color: #900;
     border-radius: 0 0 5px 5px;
-  
+  margin-bottom: 10%;
     box-sizing: border-box;
   }
   
@@ -50,3 +61,12 @@ body {
     padding: 0.3em;
   }
   
+  .passCircle {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    display: inline-block;
+    border-radius: 50px;
+    margin-right: 5px;
+  }
+
