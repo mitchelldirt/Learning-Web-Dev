@@ -269,15 +269,16 @@
     </div>
     <div>
       <label for="zip">Zip Code:</label>
-      <input type="zip" min="4" max="6">
+      <input pattern="^\d+$" type="zip" minlength="4" maxlength="6" id="zip">
+      <span class="errorZip" id="errorZip"></span>
     </div>
     <div>
       <label for="pass">Password:</label>
-      <input type="password" name="pass" id="">
+      <input type="password" name="pass">
     </div>
     <div>
       <label for="confirm">Confirm Password:</label>
-      <input type="password" name="confirm" id="">
+      <input type="password" name="confirm">
     </div>
     <div>
       <h4>Password Requirements:</h4>
