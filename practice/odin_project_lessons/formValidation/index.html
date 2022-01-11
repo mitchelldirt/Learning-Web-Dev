@@ -274,18 +274,20 @@
     </div>
     <div>
       <label for="pass">Password:</label>
-      <input type="password" name="pass">
+      <input type="password" name="pass" id="pass">
     </div>
     <div>
       <label for="confirm">Confirm Password:</label>
-      <input type="password" name="confirm">
+      <input type="password" name="confirm" id="confirmPass">
+      <br>
+      <span class="errorPass" id="errorPass"></span>
     </div>
     <div>
       <h4>Password Requirements:</h4>
-      <p><span class="passCircle"></span>1 capital letter</p>
-      <p><span class="passCircle"></span>1 number</p>
-      <p><span class="passCircle"></span>1 symbol</p>
-      <p><span class="passCircle"></span>8 minimum characters</p>
+      <p><span id="req1" class="passCircle"></span>1 capital letter</p>
+      <p><span id="req2" class="passCircle"></span>1 number</p>
+      <p><span id="req3" class="passCircle"></span>1 symbol: !@#$%&*()-+=^.</p>
+      <p><span id="req4" class="passCircle"></span>8 minimum characters</p>
     </div>
     <button>Submit</button>
   </form>

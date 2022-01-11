@@ -30,6 +30,10 @@ form.addEventListener('submit', function (event) {
   } else if (!zipCodeBox.validity.valid) {
     showZipCodeError()
     event.preventDefault()
+  } else if (passwordValid === false) {
+    event.preventDefault();
+  } else if (confirmStatus === false) {
+    event.preventDefault();
   }
 });
 
@@ -53,7 +57,7 @@ function showError() {
 }
 
 const zipCodeBox = document.getElementById("zip");
-const errorZip = document.getElementById("errorZip")
+const errorZip = document.getElementById("errorZip");
 
 zipCodeBox.addEventListener("input", function (event) {
   if (zipCodeBox.validity.valid) {
@@ -72,4 +76,65 @@ function showZipCodeError() {
   } else if (zipCodeBox.validity.tooLong) {
     errorZip.textContent = "Maximum 6 numbers";
   }
+}
+
+let passwordValid = false;
+const passwordInput = document.getElementById("pass");
+const req1 = document.getElementById("req1");
+const req2 = document.getElementById("req2");
+const req3 = document.getElementById("req3");
+const req4 = document.getElementById("req4");
+
+const pattern1 = new RegExp("[A-Z]");
+const pattern2 = new RegExp("[0-9]");
+const pattern3 = new RegExp("[!@#\$%&\*\(\)\+=\^\._-]");
+
+passwordInput.addEventListener("input", function (event) {
+  let currentInput = passwordInput.value;
+  passwordValid = true;
+  if (pattern1.test(currentInput) === true) {
+    req1.style.backgroundColor = "green"
+  } else {
+    passwordValid = false;
+    req1.style.backgroundColor = "red";
+  }
+  
+  if (pattern2.test(currentInput) === true) {
+    req2.style.backgroundColor = "green"
+  } else {
+    passwordValid = false;
+    req2.style.backgroundColor = "red";
+  }
+  
+  if (pattern3.test(currentInput) === true) {
+    req3.style.backgroundColor = "green"
+  } else {
+    passwordValid = false;
+    req3.style.backgroundColor = "red";
+  }
+  
+  if (currentInput.length >= 8) {
+    req4.style.backgroundColor = "green"
+  } else {
+    passwordValid = false;
+    req4.style.backgroundColor = "red";
+  }
+})
+
+const confirmPass = document.getElementById("confirmPass");
+const errorPass = document.getElementById("errorPass");
+let confirmStatus = false;
+confirmPass.addEventListener("input", function (event) {
+  if (confirmPass.value === document.getElementById("pass").value) {
+    errorPass.textContent = '';
+    errorPass.className = "errorPass";
+    confirmStatus = true;
+  } else {
+    confirmStatus = false;
+    showConfirmPassError();
+  }
+})
+
+function showConfirmPassError() {
+  errorPass.textContent = "Passwords must match"
 }

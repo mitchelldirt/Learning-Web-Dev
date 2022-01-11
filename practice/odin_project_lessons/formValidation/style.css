@@ -1,6 +1,6 @@
 body {
   font: 1em sans-serif;
-  width: 200px;
+  width: 250px;
   padding: 0;
   margin: 0 auto;
   background-color: lightblue;
@@ -13,6 +13,7 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
+  border-radius: 25px;
   gap: 10px;
 }
 
@@ -55,6 +56,7 @@ input:focus:invalid {
   border-radius: 0 0 5px 5px;
   margin-bottom: 10%;
   box-sizing: border-box;
+  
 }
 
 .error.active {
@@ -71,6 +73,17 @@ input:focus:invalid {
 }
 
 .errorZip {
+  width: 100%;
+  padding: 0;
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 10%;
+  box-sizing: border-box;
+}
+
+.errorPass {
   width: 100%;
   padding: 0;
   font-size: 80%;
