@@ -95,25 +95,51 @@ let doesntHaveIt = contains(nestedObject, "foo"); // false
 // Question 7: Given a multi-dimensional integer array, return the total number of integers stored inside this array
 
 // might need to take out the = 0???
-function totalIntegers(array){
-	if(array.length === 0) return 0;
+function totalIntegers(array) {
+    if (array.length === 0) return 0;
 
-	let total = 0;
-	let first = array.shift();
+    let total = 0;
+    let first = array.shift();
 
-	if (Array.isArray(first)){
-		total += totalIntegers(first); 
-	} else if (Number.isInteger(first)) {
-		total += 1;
-	}
+    if (Array.isArray(first)) {
+        total += totalIntegers(first);
+    } else if (Number.isInteger(first)) {
+        total += 1;
+    }
 
-	return total + totalIntegers(array);
+    return total + totalIntegers(array);
 }
 
 var seven = totalIntegers([[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]);
 
 // Question 8: Write a function that sums squares of numbers in list that may contain more lists
+function sumSquares(array) {
 
+    if (array.length === 0) return 0;
+
+    let total = 0;
+    let first = array.shift();
+
+    if (Array.isArray(first)) {
+        total += sumSquares(first)
+    } else if (Number.isInteger(first)) {
+        total += (first * first)
+    }
+
+    return total + sumSquares(array)
+}
+const test1 = [1, 2, 3];
+const test2 = [[1, 2], 3];
+const test3 = [[[[[[[[[1]]]]]]]]]
+const test4 = [10, [[10], 10], [10]]
+
+// Question 9: The function should return an array containing repetitions of the number argument. 
+// For instance, replicate(3, 5) should return [5,5,5]. If the times argument is negative, return an empty array.
+function replicate(times, num) {
+    if (times <= 0) return [];
+
+    return [num].concat(replicate(times - 1, num));
+}
 
 
 // ANSWERS
@@ -150,3 +176,15 @@ console.log(sixty);
 // console.log(seven)
 
 //Answer 8
+/* console.log(
+    sumSquares(test1),
+    sumSquares(test2),
+    sumSquares(test3),
+    sumSquares(test4)
+    );
+    */
+
+// Answer 9
+console.log(replicate(3, 5)) // [5, 5, 5]
+console.log(replicate(1, 69)) // [69]
+console.log(replicate(-2, 6)) // []
