@@ -1,3 +1,23 @@
+// Function to print out the tree in a nice way provided by the odin project.
+const prettyPrint = (node, prefix = '', isLeft = true) => {
+    if (node.rightChild !== null) {
+        prettyPrint(node.rightChild, `${prefix}${isLeft ? '│   ' : '    '}`, false);
+    }
+    console.log(`${prefix}${isLeft ? '└── ' : '┌── '}${node.data}`);
+    if (node.leftChild !== null) {
+        prettyPrint(node.leftChild, `${prefix}${isLeft ? '    ' : '│   '}`, true);
+    }
+}
+
+function cleanArray(array) {
+    array.sort((a, b) => {
+        return a - b
+    })
+    // remove duplicates
+    return array.filter((item,
+        index) => array.indexOf(item) === index);
+}
+
 class Node {
     data = null
     leftChild = null
@@ -15,30 +35,89 @@ class Tree {
         this.array = cleanArray(array);
     }
 
-    cleanArray() {
-        this.array.sort((a, b) => {
-            return a - b
-        })
-        // remove duplicates
-        return this.array.filter((item,
-            index) => this.array.indexOf(item) === index);
+    buildTree(array, start, end) {
+        if (start > end) {
+            return null;
+        }
+
+        const midPoint = (Math.floor((start + end) / 2));
+
+        let node = new Node(array[midPoint]);
+
+        node.leftChild = this.buildTree(array, start, midPoint - 1);
+        node.rightChild = this.buildTree(array, midPoint + 1, end)
+
+        this.root = node
+        return node
     }
 
-    buildTree(array) {
-        //TODO: write function haha
+    insert(root, value) {
+        // if the root is empty create node using the value and return it as the root
 
-        // STEP 1: Set the root of the tree (middle of the array)
+        if (root && value === root.data) return 'No duplicate values please'
+        if (!root) {
+            root = new Node(value);
+            return root;
+        }
 
-        // STEP 2: Set the items to the left of the root as left child and right of the root as right child
+        // if node is less than root left side = call insert on the left side
+        if (value < root.data) {
+            root.leftChild = this.insert(root.leftChild, value);
+        }
+        // else if node is greater than root right side = call insert on the right side
+        else {
+            root.rightChild = this.insert(root.rightChild, value);
+        }
 
-        // STEP 3: Recursively do the same for the left and right half
+        // return the node - test if you need to do this
+        return root;
+    }
 
-        // STEP 4: base case = start > end
+    delete() {
 
-        // use article linked from odin project for reference
+    }
+
+    find() {
+
+    }
+
+    levelOrder() {
+
+    }
+
+    inOrder() {
+
+    }
+
+    preOrder() {
+
+    }
+
+    postOrder() {
+
+    }
+
+    height() {
+
+    }
+
+    depth() {
+
+    }
+
+    isBalanced() {
+
+    }
+
+    rebalance() {
+
     }
 }
 
 const pine = new Tree([5, 6, 6, 9, 10, 3, 9, 10, 1]);
 
-console.log(pine.sortArray())
+let root = pine.buildTree(pine.array, 0, pine.array.length);
+console.log(pine.insert(pine.root, 4));
+console.log(pine.insert(pine.root, 2));
+
+prettyPrint(pine.root)
