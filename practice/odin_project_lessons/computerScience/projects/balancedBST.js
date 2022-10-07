@@ -73,8 +73,32 @@ class Tree {
         return root;
     }
 
-    delete() {
+    deleteNode(root, value) {
+        // if the value is a leaf then just remove it
+        if (root === null) {
+            return root;
+        }
 
+        if (value < root.data) {
+            return this.deleteNode(root.leftChild, value)
+        } else if (value > root.data) {
+            return this.deleteNode(root.rightChild), value
+        }
+
+        else {
+
+
+            if (root.leftChild == null) {
+                return root.rightChild;
+            } else if (root.rightChild == null) {
+                return root.leftChild;
+            }
+        }
+
+        // if the value has one child copy that child to the parents child spot
+
+        // if the value has two children find the left-most child of the right branch (which will be great than the first child on the left but less than the first on the right branch)
+        return root
     }
 
     find() {
@@ -120,4 +144,5 @@ let root = pine.buildTree(pine.array, 0, pine.array.length);
 console.log(pine.insert(pine.root, 4));
 console.log(pine.insert(pine.root, 2));
 
+pine.root = pine.deleteNode(pine.root, 2);
 prettyPrint(pine.root)
