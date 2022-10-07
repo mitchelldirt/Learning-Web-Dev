@@ -18,6 +18,15 @@ function cleanArray(array) {
         index) => array.indexOf(item) === index);
 }
 
+function minValue(root) {
+    let minv = root.data;
+    while (root.leftChild != null) {
+        minv = root.leftChild.data;
+        root = root.leftChild;
+    }
+    return minv;
+}
+
 class Node {
     data = null
     leftChild = null
@@ -73,6 +82,10 @@ class Tree {
         return root;
     }
 
+    removeNode(value) {
+        root = this.deleteNode(root, value)
+    }
+
     deleteNode(root, value) {
         // if the value is a leaf then just remove it
         if (root === null) {
@@ -80,24 +93,24 @@ class Tree {
         }
 
         if (value < root.data) {
-            return this.deleteNode(root.leftChild, value)
+            root.leftChild = this.deleteNode(root.leftChild, value)
         } else if (value > root.data) {
-            return this.deleteNode(root.rightChild), value
+            root.rightChild = this.deleteNode(root.rightChild, value)
         }
 
         else {
-
 
             if (root.leftChild == null) {
                 return root.rightChild;
             } else if (root.rightChild == null) {
                 return root.leftChild;
             }
+
+            root.data = minValue(root.rightChild)
+
+            root.rightChild = this.deleteNode(root.rightChild, root.data)
         }
 
-        // if the value has one child copy that child to the parents child spot
-
-        // if the value has two children find the left-most child of the right branch (which will be great than the first child on the left but less than the first on the right branch)
         return root
     }
 
@@ -144,5 +157,5 @@ let root = pine.buildTree(pine.array, 0, pine.array.length);
 console.log(pine.insert(pine.root, 4));
 console.log(pine.insert(pine.root, 2));
 
-pine.root = pine.deleteNode(pine.root, 2);
+pine.removeNode(2)
 prettyPrint(pine.root)
