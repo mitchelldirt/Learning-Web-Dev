@@ -45,7 +45,7 @@ class Tree {
     }
 
     buildTree(array, start, end) {
-        if (start > end) {
+        if (start >end) {
             return null;
         }
 
@@ -56,8 +56,12 @@ class Tree {
         node.leftChild = this.buildTree(array, start, midPoint - 1);
         node.rightChild = this.buildTree(array, midPoint + 1, end)
 
-        this.root = node
-        return node
+        if (node.data != undefined) {
+            this.root = node
+            return node
+        }
+        
+        
     }
 
     insert(root, value) {
@@ -127,7 +131,17 @@ class Tree {
         }
     }
 
-    levelOrder() {
+    levelOrder(root, queue = [root], levelOrderResult = []) {
+            if (!root) return levelOrderResult;
+            // queue nodes children
+            if (root.leftChild) queue.push(root.leftChild);
+            if (root.rightChild) queue.push(root.rightChild);
+
+            // dequeue parent node
+            let result = queue.shift();
+            levelOrderResult.push(result.data)
+
+            return this.levelOrder(queue[0], queue, levelOrderResult);
 
     }
 
@@ -162,10 +176,11 @@ class Tree {
 
 const pine = new Tree([5, 6, 6, 9, 10, 3, 9, 10, 1]);
 
-let root = pine.buildTree(pine.array, 0, pine.array.length);
-console.log(pine.insert(pine.root, 4));
-console.log(pine.insert(pine.root, 2));
+let root = pine.buildTree(pine.array, 0, pine.array.length - 1);
+// console.log(pine.insert(pine.root, 4));
+// console.log(pine.insert(pine.root, 2));
 
-pine.removeNode(2)
+// pine.removeNode(2)
 prettyPrint(pine.root)
 console.log(pine.find(pine.root, 3))
+console.log(pine.levelOrder(pine.root))
