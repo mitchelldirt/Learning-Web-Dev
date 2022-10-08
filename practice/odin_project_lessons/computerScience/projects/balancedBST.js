@@ -114,8 +114,17 @@ class Tree {
         return root
     }
 
-    find() {
-
+    find(root, value) {
+        let currentRoot = root;
+        while (currentRoot.data) {
+            if (value === currentRoot.data) {
+                return currentRoot;
+            } else if (value < currentRoot.data) {
+                currentRoot = currentRoot.leftChild;
+            } else if (value > currentRoot.data) {
+                currentRoot = currentRoot.rightChild;
+            }
+        }
     }
 
     levelOrder() {
@@ -159,3 +168,4 @@ console.log(pine.insert(pine.root, 2));
 
 pine.removeNode(2)
 prettyPrint(pine.root)
+console.log(pine.find(pine.root, 3))
