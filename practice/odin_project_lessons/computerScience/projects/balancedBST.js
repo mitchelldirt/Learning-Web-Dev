@@ -187,8 +187,27 @@ class Tree {
         return result
     }
 
-    postOrder() {
+    postOrder(root, nodeArray = [], result = []) {
+        if (!root) return;
+        nodeArray.push(root)
 
+        if (root.leftChild) {
+            return this.postOrder(root.leftChild, nodeArray, result);
+        }
+
+        while (nodeArray.length > 0) {
+            let currentNode = nodeArray.pop();
+            if (currentNode.rightChild) {
+                let branch = this.postOrder(currentNode.rightChild);
+                result = result.concat(branch)
+                result.push(currentNode.data)
+            } else {
+                result.push(currentNode.data)
+            }
+            
+        }
+
+        return result;
     }
 
     height() {
@@ -208,7 +227,7 @@ class Tree {
     }
 }
 
-const pine = new Tree([1, 3, 5, 7, 9, 11, 2, 4, 6, 8, 10]);
+const pine = new Tree([1, 3, 5, 7, 9, 11, 2, 4, 6, 8, 10, 0, 12, 13, 14]);
 
 let root = pine.buildTree(pine.array, 0, pine.array.length - 1);
 // console.log(pine.insert(pine.root, 4));
@@ -218,4 +237,4 @@ let root = pine.buildTree(pine.array, 0, pine.array.length - 1);
 prettyPrint(pine.root)
 //console.log(pine.find(pine.root, 3))
 // console.log(pine.levelOrder(pine.root))
-console.log(pine.preOrder(pine.root))
+console.log(pine.postOrder(pine.root))
