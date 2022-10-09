@@ -45,7 +45,7 @@ class Tree {
     }
 
     buildTree(array, start, end) {
-        if (start >end) {
+        if (start > end) {
             return null;
         }
 
@@ -60,8 +60,8 @@ class Tree {
             this.root = node
             return node
         }
-        
-        
+
+
     }
 
     insert(root, value) {
@@ -132,25 +132,45 @@ class Tree {
     }
 
     levelOrder(root, queue = [root], levelOrderResult = []) {
-            if (!root) return levelOrderResult;
-            // queue nodes children
-            if (root.leftChild) queue.push(root.leftChild);
-            if (root.rightChild) queue.push(root.rightChild);
+        // For an iterative approach use while loop
+        // while root.leftChild && root.rightChild
 
-            // dequeue parent node
-            let result = queue.shift();
-            levelOrderResult.push(result.data)
+        if (!root) return levelOrderResult;
+        // queue nodes children
+        if (root.leftChild) queue.push(root.leftChild);
+        if (root.rightChild) queue.push(root.rightChild);
 
-            return this.levelOrder(queue[0], queue, levelOrderResult);
+        // dequeue parent node
+        let result = queue.shift();
+        levelOrderResult.push(result.data)
 
-    }
-
-    inOrder() {
+        return this.levelOrder(queue[0], queue, levelOrderResult);
 
     }
 
     preOrder() {
 
+    }
+
+    inOrder(root, nodeArray = [], result = []) {
+        // If no data return
+        if (!root) return;
+
+        nodeArray.push(root);
+        if (root.leftChild) {
+            return this.preOrder(root.leftChild, nodeArray, result)
+        } else {
+            while (nodeArray.length > 0) {
+                let currentNode = nodeArray.pop();
+                result.push(currentNode.data)
+                if (currentNode.rightChild) {
+                    return this.preOrder(currentNode.rightChild, nodeArray, result);
+                }
+            }
+        }
+
+
+        return result
     }
 
     postOrder() {
@@ -174,7 +194,7 @@ class Tree {
     }
 }
 
-const pine = new Tree([5, 6, 6, 9, 10, 3, 9, 10, 1]);
+const pine = new Tree([1, 3, 5, 7, 9, 11, 2, 4, 6, 8, 10]);
 
 let root = pine.buildTree(pine.array, 0, pine.array.length - 1);
 // console.log(pine.insert(pine.root, 4));
@@ -182,5 +202,6 @@ let root = pine.buildTree(pine.array, 0, pine.array.length - 1);
 
 // pine.removeNode(2)
 prettyPrint(pine.root)
-console.log(pine.find(pine.root, 3))
-console.log(pine.levelOrder(pine.root))
+//console.log(pine.find(pine.root, 3))
+// console.log(pine.levelOrder(pine.root))
+console.log(pine.preOrder(pine.root))
