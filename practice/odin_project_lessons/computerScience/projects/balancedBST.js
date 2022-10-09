@@ -204,26 +204,52 @@ class Tree {
             } else {
                 result.push(currentNode.data)
             }
-            
+
         }
 
         return result;
     }
 
-    height() {
+    height(root, left = 0, right = 0) {
+        if (!root) return -1;
 
+        left = this.height(root.leftChild);
+        right = this.height(root.rightChild);
+
+        if (left > right) {
+            return left + 1;
+        } else {
+            return right + 1
+        }
     }
 
-    depth() {
+    depth(root, target) {
+        let depth = 0
+        while (root.data !== target) {
+            target < root.data ? root = root.leftChild : root = root.rightChild;
 
+            depth++
+        }
+        return depth;
     }
 
-    isBalanced() {
+    isBalanced(root) {
+        let difference;
+        let leftHeight = this.height(root.leftChild);
+        let rightHeight = this.height(root.rightChild);
 
+        if (leftHeight > rightHeight) {
+            difference = leftHeight - rightHeight;
+        } else {
+            difference = rightHeight - leftHeight;
+        }
+
+        return difference <= 1 ? true : false;
     }
 
-    rebalance() {
-
+    rebalance(root) {
+        let array = this.inOrder(root);
+        this.root = this.buildTree(array, 0, array.length - 1);
     }
 }
 
@@ -234,7 +260,49 @@ let root = pine.buildTree(pine.array, 0, pine.array.length - 1);
 // console.log(pine.insert(pine.root, 2));
 
 // pine.removeNode(2)
-prettyPrint(pine.root)
+
 //console.log(pine.find(pine.root, 3))
 // console.log(pine.levelOrder(pine.root))
-console.log(pine.postOrder(pine.root))
+//console.log(pine.postOrder(pine.root))
+// pine.insert(pine.root, 15);
+// pine.insert(pine.root, 16);
+// console.log(pine.isBalanced(pine.root))
+// pine.rebalance(pine.root)
+// console.log(pine.isBalanced(pine.root))
+// prettyPrint(pine.root)
+
+// TIE IT ALL TOGETHER
+
+function randomArray(lengthOfArray) {
+    let array = [];
+
+    for (let i = 0; i < lengthOfArray; i++) {
+        array.push(Math.floor(Math.random() * 100));
+    }
+    return array;
+}
+
+const oak = new Tree(randomArray(10));
+oak.buildTree(oak.array, 0, oak.array.length - 1);
+prettyPrint(oak.root)
+console.log(oak.isBalanced(oak.root))
+console.log('LEVEL ORDER:', oak.levelOrder(oak.root));
+console.log('PRE ORDER:', oak.preOrder(oak.root));
+console.log('POST ORDER:', oak.postOrder(oak.root));
+console.log('IN ORDER:', oak.inOrder(oak.root));
+oak.insert(oak.root, 110);
+oak.insert(oak.root, 120);
+oak.insert(oak.root, 130);
+oak.insert(oak.root, 140);
+oak.insert(oak.root, 150);
+prettyPrint(oak.root)
+console.log(oak.isBalanced(oak.root));
+oak.rebalance(oak.root);
+console.log(oak.isBalanced(oak.root));
+prettyPrint(oak.root)
+console.log('LEVEL ORDER:', oak.levelOrder(oak.root));
+console.log('PRE ORDER:', oak.preOrder(oak.root));
+console.log('POST ORDER:', oak.postOrder(oak.root));
+console.log('IN ORDER:', oak.inOrder(oak.root));
+
+
