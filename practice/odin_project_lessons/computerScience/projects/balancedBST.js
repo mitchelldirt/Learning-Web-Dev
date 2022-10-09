@@ -148,8 +148,22 @@ class Tree {
 
     }
 
-    preOrder() {
+    preOrder(root, nodeArray = [], result = []) {
+        if (!root) return;
+        nodeArray.push(root)
+        result.push(root.data);
+        if (root.leftChild) {
+            return this.preOrder(root.leftChild, nodeArray, result);
+        }
 
+        while (nodeArray.length > 0) {
+            let currentNode = nodeArray.pop();
+            if (currentNode.rightChild) {
+                return this.preOrder(currentNode.rightChild, nodeArray, result);
+            }
+        }
+
+        return result;
     }
 
     inOrder(root, nodeArray = [], result = []) {
@@ -158,13 +172,13 @@ class Tree {
 
         nodeArray.push(root);
         if (root.leftChild) {
-            return this.preOrder(root.leftChild, nodeArray, result)
+            return this.inOrder(root.leftChild, nodeArray, result)
         } else {
             while (nodeArray.length > 0) {
                 let currentNode = nodeArray.pop();
                 result.push(currentNode.data)
                 if (currentNode.rightChild) {
-                    return this.preOrder(currentNode.rightChild, nodeArray, result);
+                    return this.inOrder(currentNode.rightChild, nodeArray, result);
                 }
             }
         }
